@@ -3,25 +3,28 @@
 int tab[50];
 void nbpremier(char *fichier)
 {
-  int i=0,affiche=50,trouver=1,div,nbv;
   FILE *fi=fopen(fichier,"w+");
   if (fi==NULL)
   {
     printf("impossible d'ouvrir le fichier ");
     exit(0);
   }
-  nbv=2;
-  while (trouver<=affiche)
-  {
-    div=2;
-    while (nbv%div!=0)
-    {
-      div++;
-    }
-    if (nbv%div==0 && div==nbv)
-    {
-      trouver++;
-      tab[i]=nbv;
+  int compte = 0;
+  int nombre = 2;
+
+    printf("Les 50 premiers nombres premiers sont :\n");
+
+    while (compte < 50) {
+        int estPremier = 1; // On suppose que le nombre est premier
+
+        // Vérification si le nombre actuel est premier
+        for (int i = 2; i * i <= nombre; i++) {
+            if (nombre % i == 0) {
+                estPremier = 0; // Il n'est pas premier
+                break;          // On quitte la boucle for inutile de continuer
+            }
+        }
+
       i++;
       fprintf(fi,"%d\n",nbv);
     }
@@ -79,7 +82,7 @@ void changement(char *fichier)
       }
       j++;
     }
-    fprintf(f,"%s  ",ch[i]);
+    fprintf(f,"%s\n",ch[i]);
   }
   fprintf(f,"les nombre dont leur places sont échangées de place \n");
   for (i=0;i<50;i++)
