@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct infopersonnel {
+struct infopersonnel 
+{
     char nom[30];
     char prenom[60];
     char niveau[15];
@@ -15,7 +16,8 @@ void inscription(struct infopersonnel etudiant[]);
 int nb_eleveL1 = 0, nb_eleveL2 = 0, nb_eleveL3 = 0, nb_eleveM1 = 0, nb_eleveM2 = 0, nb_eleveD1 = 0, nb_eleveD2 = 0;
 struct infopersonnel etudiantL1[60], etudiantL2[60], etudiantL3[60], etudiantM1[60], etudiantM2[60], etudiantD1[60], etudiantD2[60];
 
-void inscription(struct infopersonnel etudiant[]) {
+void inscription(struct infopersonnel etudiant[]) 
+{
     char Niveau[7][20] = {"L1", "L2", "L3", "M1", "M2", "D1", "D2"};
     int classe = -1;
     char lesinfo[][50] = {
@@ -31,9 +33,11 @@ void inscription(struct infopersonnel etudiant[]) {
     int j = 0;
     char reponse;
 
-    do {
+    do 
+    {
         printf("\n--------------------------------------------------------------------------------------------------------------------\n");
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) 
+        {
             printf("\n%s\t", lesinfo[i]);
             switch (i) {
                 case 0: 
