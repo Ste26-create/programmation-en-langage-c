@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*le programme evalue la valeur d'une fonction f(x)( polynome du premier degré quelque soit les valeurs ) passer en parametre de la commande dont la valeur de x est donner*/
+/*le programme evalue la valeur d'une fonction f(x)( fonction affine quelque soit les valeurs ) passer en parametre de la commande dont la valeur de x est donner*/
 int main(int n,char *tab[])
 {
 	char a[10],b[10],xx[10];
