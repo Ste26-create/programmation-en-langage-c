@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 int tab[50];
+
+void nbpremier(char *fichier);
+void affichage(char *fichier);
+void trier(char *fichier);
+void changement(char *fichier);
+
 void nbpremier(char *fichier)
 {
   FILE *fi=fopen(fichier,"w+");
@@ -14,14 +20,17 @@ void nbpremier(char *fichier)
 
     printf("Les 50 premiers nombres premiers sont :\n");
 
-    while (compte < 50) {
+    while (compte < 50) 
+	{
         int estPremier = 1; // On suppose que le nombre est premier
 
         // Vérification si le nombre actuel est premier
-        for (int i = 2; i * i <= nombre; i++) {
-            if (nombre % i == 0) {
-                estPremier = 0; // Il n'est pas premier
-                break;          // On quitte la boucle for inutile de continuer
+        for (int i = 2; i * i <= nombre; i++) 
+		{
+            if (nombre % i == 0) 
+			{
+                estPremier = 0;
+                break;          
             }
         }
 
